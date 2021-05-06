@@ -50,15 +50,15 @@ export class AltaPeliculasComponent implements OnInit {
 
     this.banderaActorSeleccionado = false;
     if (this.listaActoresSeleccionados.includes(actor)) {
-      //console.log("Actor ya incluido");
+      console.log("Actor ya incluido");
     }
     else {
       this.listaActoresSeleccionados.push(actor);
-      // console.log(this.listaActoresSeleccionados);
+      console.log(this.listaActoresSeleccionados);
     }
 
     this.peliculaFuturaAlta.actores = this.listaActoresSeleccionados;
-    // console.log(this.listaActoresSeleccionados)
+    console.log(this.listaActoresSeleccionados)
   }
 
   eliminarActor(actor: Actor) {
@@ -75,19 +75,19 @@ export class AltaPeliculasComponent implements OnInit {
   }
 
   altaPelicula() {
-    // console.log(this.forma);
+    console.log(this.forma);
     // console.log(this.imagen);
     // console.log("-------------");
     this.peliculaFuturaAlta.nombre =this.forma.controls['nombre'].value;
     this.peliculaFuturaAlta.tipo =this.forma.controls['tipo'].value;
-    this.peliculaFuturaAlta.fechaEstreno =this.forma.controls['fecha'].value;
+    this.peliculaFuturaAlta.fechaEstreno =this.forma.controls['fechaEstreno'].value;
     this.peliculaFuturaAlta.fotoPelicula = this.imagen.name;
-    this.peliculaFuturaAlta.cantidadPublico = "0";
+    // this.peliculaFuturaAlta.cantidadPublico = "0";
     
-    // console.log(this.peliculaFuturaAlta);
+    console.log(this.peliculaFuturaAlta);
 
     this.peliService.subirImagen(this.imagen, this.peliculaFuturaAlta);
     // this._Mservice.mensajeExitoso('Pelicula dada de alta correctamente!');
-    this.router.navigateByUrl("/Bienvenido");
+    // this.router.navigateByUrl("/Bienvenidos");
   }
 }

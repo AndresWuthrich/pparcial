@@ -6,6 +6,6 @@ export class Pelicula {
     tipo: string;
     fechaEstreno: Date;
     cantidadPublico: string;
-    fotoPelicula: string;
+    fotoPelicula?: string;
     actores?: Array<Actor>;
 }
