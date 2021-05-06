@@ -1,0 +1,10 @@
+<div class="jumbotron">
+    <div class="container">
+        <ul>
+            <li *ngFor="let actor of listadoActores">
+                <span>{{actor.nombre}}</span>
+                <button class="btn btn-primary" (click)="SeleccionarActor(actor)">Seleccionar actor</button>
+            </li>
+        </ul>
+    </div>
+</div>

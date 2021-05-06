@@ -1,0 +1,69 @@
+<app-navbar></app-navbar>
+<br><br><br><br><br>
+
+<div class="container mt-5">
+    <main>
+
+        <div class="row g-5">
+            <div class="col-md-5 col-lg-4 order-md-last">
+                <app-tabla-actor [listadoActores]='listadoActores'
+                    (actorSeleccionadoEvento)="cargarActorSeleccionado($event)"></app-tabla-actor>
+
+            </div>
+            <div class="col-md-7 col-lg-8">
+                <h4 class="mb-3">Alta Pelicula..</h4>
+                <form [formGroup]="forma" class="needs-validation" (ngSubmit)="altaPelicula()">
+                    <div class="row g-3">
+                        <div class="col-sm-12">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" formControlName="nombre">
+                        </div>
+
+                        <div class="col-sm-12">
+                            <label for="estreno" class="form-label">Fecha de estreno</label>
+                            <input type="date" class="form-control" id="estreno" formControlName="fecha">
+                        </div>
+
+                        <div class="col-sm-12">
+                            <label for="foto" class="form-label">Foto de pelicula</label>
+                            <input type="file" class="form-control" id="foto" formControlName="foto"
+                                (change)="nuevaImagen($event)">
+                        </div>
+
+                        <div class="col-md-12 mb-4">
+                            <label for="tipo" class="form-label">Tipo de pelicula</label>
+                            <select class="form-select" id="tipo" required formControlName="tipo">
+                                <option value="e">Elejir tipo...</option>
+                                <option value="terror">Terror</option>
+                                <option value="comedia">Comedia</option>
+                                <option value="amor">Amor</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <h4 class="mb-3">Actor</h4>
+                        <div class="actorPrincipal" *ngIf="banderaActorSeleccionado">
+                            <h6 class="mb-5"> Seleccione uno o varios actores de la lista de la derecha</h6>
+                        </div>
+                        <div class="col-md-12 mb-4" *ngIf="listaActoresSeleccionados.length">
+                            <ul class="list-group mb-3 card-body overflow-auto" id="boxConScroll" style="height: 180px;"
+                                #scrollMe [scrollTop]="scrollMe">
+                                <li type="text" class="list-group-item d-flex justify-content-between lh-condensed elegido"
+                                    *ngFor="let actor of listaActoresSeleccionados" disable>
+
+                                    <input type="text" class="form-control" value="{{actor.apellido}} {{actor.nombre}}"disabled>
+                                    <button class="btn btn-danger" (click)="eliminarActor(actor)"><b>X</b></button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="w-100 btn btn-primary btn-lg" type="submit"
+                        [disabled]="forma.invalid || banderaActorSeleccionado == true">Alta de pelicula</button>
+                    <!-- <button class="w-100 btn btn-primary btn-lg" type="submit">Alta de pelicula</button> -->
+                </form>
+
+            </div>
+        </div>
+    </main>
+
+</div>

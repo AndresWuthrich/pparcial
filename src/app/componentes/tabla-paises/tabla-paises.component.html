@@ -1,0 +1,10 @@
+<div class="jumbotron">
+    <div class="container">
+        <ul>
+            <li *ngFor="let pais of listadoPaises">
+                <span>{{pais.nombre}}</span>
+                <button class="btn btn-primary" (click)="SeleccionarPais(pais)">Seleccionar pais</button>
+            </li>
+        </ul>
+    </div>
+</div>

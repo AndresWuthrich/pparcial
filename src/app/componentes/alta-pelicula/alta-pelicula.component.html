@@ -1,0 +1,12 @@
+<h2>Alta pelicula</h2>
+<!-- <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+-->
+<div *ngIf="peliculaNueva">
+    <input type="text" [(ngModel)]="peliculaNueva.nombre">
+    <button class="btn btn-primary" (click)="guardarNuevaPelicula()">Crear</button>
+</div>
+
+<div *ngIf="!peliculaNueva">
+     <button class="btn btn-primary" (click)="hacerNuevaPelicula()">Nueva Pelicula</button>
+</div>

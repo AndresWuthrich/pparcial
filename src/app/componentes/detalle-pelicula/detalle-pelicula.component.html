@@ -1,0 +1,9 @@
+    <h2>Detalle Pelicula</h2>
+    <div *ngIf="peliculaParaMostrar">
+        <p>{{peliculaParaMostrar.nombre}}</p>
+        <p>{{peliculaParaMostrar.cantidadPublico}}</p>
+        <p>{{peliculaParaMostrar.tipo}}</p>
+        <p>{{peliculaParaMostrar.fechaEstreno}}</p>
+        <img src={{peliculaParaMostrar.fotoPelicula}}>
+    </div>
+    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
