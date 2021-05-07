@@ -1,0 +1,59 @@
+html {
+    font-size: 14px;
+  }
+  @media (min-width: 768px) {
+    html {
+      font-size: 16px;
+    }
+  }
+  
+  body{
+      background-color: lightsteelblue;
+      font-family:'Gill Sans';
+  }
+  .container {
+    max-width: 960px;
+  }
+  
+  .pricing-header {
+    max-width: 700px;
+  }
+  
+  .card-deck .card {
+    min-width: 220px;
+  }
+  
+  .border-top { border-top: 1px solid #e5e5e5; }
+  .border-bottom { border-bottom: 1px solid #e5e5e5; }
+  
+  .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+    
+  div{
+    font-family:'Gill Sans';
+  }
+  
+  
+  
+  /* body, p, h2, a, p:hover{font-family: Lucida Sans;}
+  
+  .imagenDeMenu{
+      width: 80px;
+      height: 70px;
+      }
+      
+      .hero-text {
+          text-align: center; */
+          /* position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%); 
+          color: #100000;*/
+          /* color:#61e6fd;
+      } */
+      
+      /* body{
+           background-image:url('../../../assets/imagenes/backTron2adw.png');
+       /*   background-blend-mode: hard-light;
+      } */
+      
+  

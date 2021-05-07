@@ -19,6 +19,11 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from 'src/environments/environment';
 import { NavbarComponent } from './navbar/navbar.component';
+import { BienvenidaComponent } from './pages/bienvenida/bienvenida.component';
+import { LoginComponent } from './pages/login/login.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { AltarepartidorComponent } from './pages/altarepartidor/altarepartidor.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,7 +39,11 @@ import { NavbarComponent } from './navbar/navbar.component';
     AltaPeliculasComponent,
     ListadoPeliculaComponent,
     AltaActoresComponent,
-    NavbarComponent
+    NavbarComponent,
+    BienvenidaComponent,
+    LoginComponent,
+    PageNotFoundComponent,
+    AltarepartidorComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +51,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
